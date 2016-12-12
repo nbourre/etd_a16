@@ -1,0 +1,6 @@
+# Created by https://www.gitignore.io/api/processing
+
+### Processing ###
+.DS_Store
+applet
+application.*
