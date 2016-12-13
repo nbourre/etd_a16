@@ -1,0 +1,21 @@
+
+
+
+https://processing.org/tutorials/2darray/
+Je me suis baser sur cette classe cell
+
+http://www.astrolog.org/labyrnth/algrithm.htm
+pour faire le choix de l'algorithme de generation (hunt and kill)
+
+http://weblog.jamisbuck.org/2011/1/24/maze-generation-hunt-and-kill-algorithm
+Je me suis baser sur se site pour implementer et comprendre l'algorithme de hunt and kill
+
+
+http://natureofcode.com/book/chapter-7-cellular-automata/
+Utiliser pour la compréhension de l'automate cellulaire
+
+https://gist.github.com/anonymous/2269798
+Utiliser comme exemple pour faire l'automate cellulaire 
+
+https://www.openprocessing.org/sketch/81079
+Pour le principe d'affichage des mur

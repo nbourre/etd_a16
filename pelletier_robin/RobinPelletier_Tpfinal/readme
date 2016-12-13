@@ -1,0 +1,11 @@
+Touche:
+
+g: generer le labyrinthe
+
+s : place le depart sur la posiition de la souris
+
+e : place la fin sur la posiition de la souris
+
+Barre espace: lance le path finding
+
+r : Reset 
