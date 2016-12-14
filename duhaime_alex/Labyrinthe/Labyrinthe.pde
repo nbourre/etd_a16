@@ -22,17 +22,17 @@ ArrayList<Case> CloseList;
 
 void setup() {
 
-  fullScreen(1);  //1366 x 768
+  fullScreen();  //1366 x 768
   //size(800, 600);
 
-  gridX = width / 18;
-  gridY = height / 30;
+  gridX = width / 9;
+  gridY = height / 15;
 
   if (gridX < 0)  gridX = 0;
   if (gridY < 0)  gridY = 0;
 
-  caseswidth  = 76;
-  casesheight = 37;
+  caseswidth  = 60;
+  casesheight = 30;
   sizecase = 8;
 
   if (sizecase > (width - gridX) / 5 || sizecase > (height - gridY) / 5)
@@ -67,10 +67,10 @@ void setup() {
   if (endY < 1 || endY > gridheight - 1 || endY % 2 == 0)
     endY = 1;*/
     
-  startX = int(random(0, caseswidth)) * 2 + 1;
+  startX = int(random(0, caseswidth / 3)) * 2 + 1;
   startY = int(random(0, casesheight)) * 2 + 1;
   
-  endX = int(random(0, caseswidth)) * 2 + 1;
+  endX = int(random((caseswidth * 2) / 3, caseswidth)) * 2 + 1;
   endY = int(random(0, casesheight)) * 2 + 1;
   
   if (endX == startX && endY == startY)
@@ -81,7 +81,7 @@ void setup() {
       endX -= 2;
   }
 
-  nbsecs = 15;
+  nbsecs = 10;
 
   if (nbsecs < 3)
     nbsecs = 3;
@@ -162,10 +162,11 @@ void draw() {
     for (int i = 0; i < gridwidth; i++)
     {
       // Détermine la couleur de chaque case -----
-      if (cases[j][i].x == startX && cases[j][i].y == startY)
-        fill(120, 190, 0);
-      else if (cases[j][i].x == endX && cases[j][i].y == endY)
-        fill(90, 60, 60);
+      if ((cases[j][i].x == startX && cases[j][i].y == startY) || (cases[j][i].x == endX && cases[j][i].y == endY)) {
+        cases[j][i].isAnimated = true;
+        cases[j][i].update(startX, startY, endX, endY);
+        fill(cases[j][i].fillColor);
+      }
       else if (cases[j][i].inpath)
         fill(0, 0, 255);
       else if (cases[j][i].iswall)
@@ -226,7 +227,7 @@ void draw() {
   // for(i de 1 a 10) -> Montrer le developpement, Dessine a chaque 10 appels -----
   frameRate(100);
 
-  /*while(!created)
+   /*while(!created)
    createMaze();
    
    while(!solved)
@@ -234,13 +235,13 @@ void draw() {
 
 
    if(!created) {
-   for(int i = 0; i < 500; i++)
+   for(int i = 0; i < 20; i++)
    if(!created)
    createMaze();
    }
    
    else if(created && !solved) {
-   for(int i = 0; i < 500; i++)
+   for(int i = 0; i < 20; i++)
    if(!solved)
    solveMaze();
    }
@@ -254,14 +255,14 @@ void draw() {
     mill = millis();
 
   // Affiche a l'écran mon nom, le temps actuel sur le temps de réinitialisation du labyrinthe et les cases de début/fin -----
-  fill(120, 190, 0);
-  int rectx = width / 4 - 50;
   
+  int rectx = width / 4 - 50;
   if(rectx < 0)
     rectx = 0;
     
+  fill(0, 255, 0);
   rect(rectx, (height / 6) * 5, width / 50, width / 50);
-  fill(90, 60, 60);
+  fill(255, 0, 255);
   rect(rectx, (height / 12) * 11, width / 50, width / 50);
 
   fill(255);
