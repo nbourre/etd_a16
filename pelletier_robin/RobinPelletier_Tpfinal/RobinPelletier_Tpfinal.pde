@@ -1,6 +1,6 @@
-int cellSize = 40;
-int sizeW = 800;
-int sizeH = 800;
+int cellSize = 25;
+int sizeW = 1000;
+int sizeH = 1000;
 Maze maze;
 
 boolean edit = true;
@@ -57,13 +57,13 @@ void draw()
   
   if(!demo)
   {
-       background(255);
-      maze.Display();
-      maze.Update();
-  if(isHunting)
-    maze.Hunt_and_Kill();
+    background(255);
+    maze.Display();
+    maze.Update();
+    if(isHunting)
+      maze.Hunt_and_Kill();
     if(findPath)
-    maze.FindPath();
+      maze.FindPath();
     
     //delay(100);
      
@@ -82,8 +82,8 @@ void draw()
      switch(demoStep)
      {
        case 0://reset
-             delay(1000);
-             maze = new Maze();
+            
+            maze = new Maze();
             maze.SetEdge();
             edit = true;
             findPath = false;
@@ -106,7 +106,8 @@ void draw()
              if(findDone)
              { 
                maze.FindPath();
-               demoStep = 0;           
+               demoStep = 0;   
+               delay(5000);
              }
                 
        break;

@@ -3,6 +3,7 @@ class CellularAutomata
   EtatCell[] ruleset = {EtatCell.OPEN,EtatCell.OPEN,EtatCell.CLOSE,EtatCell.OPEN,EtatCell.OPEN};
   int nbmur, nbDE;
   Cell[][] nextTiles,baseTiles;
+  
   CellularAutomata(Cell[][] tiles)
   {
     nextTiles = new Cell[sizeH/cellSize][sizeW/cellSize];
@@ -45,7 +46,7 @@ class CellularAutomata
     if(nbDE == 0)
      findDone = true;
      
-     print(nbDE, " ");
+     //print(nbDE, " ");
     
   }
  
