@@ -22,7 +22,7 @@ ArrayList<Case> CloseList;
 
 void setup() {
 
-  fullScreen();  //1366 x 768
+  fullScreen(1);  //1366 x 768
   //size(800, 600);
 
   gridX = width / 18;

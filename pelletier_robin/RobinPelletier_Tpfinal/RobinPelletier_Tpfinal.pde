@@ -17,7 +17,7 @@ enum EtatCell{  // 0 up 1 right 2 down 3 left (sens horaire)
 void setup()
 {  
   //size(800,800);
-  fullScreen();
+  fullScreen(1);
   background(255);
   maze = new Maze();
   maze.SetEdge();

@@ -20,7 +20,7 @@
   
 void setup(){
   //size(1280, 800);
-  fullScreen();
+  fullScreen(1);
   cellSize = ((width / height)*10) + 3;
   xcount = (int)((width/cellSize)*0.95);
   if(xcount%2 == 0)

@@ -18,7 +18,7 @@ AntColony antColony;
 boolean onPause;
 Algorithm algorithm;
 void setup(){
-  fullScreen();
+  fullScreen(1);
   //size(640,480);
   cities = new ArrayList<City>();
   for(int i = 0 ; i < cityAmount ; i++)
@@ -55,12 +55,14 @@ void draw(){
         antColony.update();
       }
     }
-  } 
+    
    displayAcc += deltaTime;
    if(displayAcc > displayDelay){
      displayAcc = 0 ;
      display();
    }
+  } 
+
 }
 
 void display(){
